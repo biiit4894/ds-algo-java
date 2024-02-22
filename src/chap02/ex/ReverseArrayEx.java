@@ -1,23 +1,23 @@
 package chap02.ex;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class ReverseArrayEx {
 
     static void swap(int[] a, int idx1, int idx2) {
-        for(int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
         int t = a[idx1];
         a[idx1] = a[idx2];
         a[idx2] = t;
 
-        System.out.println("\na[" + idx1 + "]과(와) " + "a[" + idx2 + "]를 교환합니다.");
     }
 
     static void reverse(int[] a) {
+        System.out.println(Arrays.toString(a));
         for(int i = 0; i < a.length / 2; i++) {
+            System.out.println("a[" + i + "]과(와) a[" + (a.length - i - 1) + "]를 교환합니다.");
             swap(a, i, a.length - i - 1);
+            System.out.println(Arrays.toString(a));
         }
     }
 
@@ -36,10 +36,7 @@ public class ReverseArrayEx {
 
         reverse(x);
 
-        System.out.println("요소를 역순으로 정렬했습니다.");
-        for(int i = 0; i < num; i++) {
-            System.out.println("x[" + i + "] = " + x[i]);
-        }
+        System.out.println("역순 정렬을 마쳤습니다.");
 
     }
 }
