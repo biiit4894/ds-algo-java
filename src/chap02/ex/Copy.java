@@ -4,14 +4,10 @@ import java.util.Scanner;
 
 public class Copy {
     static void copy(int[] a, int[] b) {
-        if(a.length < b.length) {
-            for(int i = 0; i < a.length; i++) {
-                a[i] = b[i];
-            }
-        } else {
-            for(int i = 0; i < b.length; i++) {
-                a[i] = b[i];
-            }
+        //int num = a.length <= b.length ? a.length : b.length;
+        int num = Math.min(a.length, b.length);
+        for(int i = 0; i < num; i++) {
+            a[i] = b[i];
         }
     }
 
